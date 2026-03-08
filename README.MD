@@ -12,10 +12,9 @@ A minimal, typographically considered Anki card template for graduate-level stud
 
 ## Screenshots
 
-![Screenshot in Light Mode](./Light.png "Anki preset in Light Mode")
-![Screenshot in Dark Mode](./Dark.png "Anki preset in Dark Mode")
-
-<img src="./Dark.png" width="240">
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| <img src="./Light.png" width="400"> | <img src="./Dark.png" width="400"> |
 
 ## Installation
 
