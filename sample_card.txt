@@ -1,0 +1,10 @@
+QUESTION What is the <b>fundamental idea of MLE</b> and how does it differ from <b>OLS</b>?
+
+ANSWER MLE works backwards from data to parameters: given the observations you actually saw, find the parameter value that made those observations most probable. This inverts the usual logic of a pdf — instead of treating the parameter as fixed and asking how probable the data is, MLE treats the <i>data</i> as fixed and asks which parameter best explains it. OLS, by contrast, minimises a geometric loss function with no distributional assumption on the error term.<br><br>
+<b>OLS objective:</b><br>
+\[ \min_\beta \ (y - X\beta)'(y - X\beta) \]
+<b>MLE objective:</b><br>
+\[ \max_\theta \ L(\theta \mid y) = \prod_{i=1}^n f(y_i \mid \theta) \]
+Under normality of errors, both yield \( \hat{\beta} = (X'X)^{-1}X'y \) — the same formula via entirely different reasoning. Outside normality, OLS loses its efficiency justification while MLE remains valid by swapping the distribution.<br><br>
+<note>The distinction between \( f(y \mid \theta) \) and \( L(\theta \mid y) \) is notational, not computational — same formula, but \( f \) treats \( \theta \) as fixed while \( L \) treats the data as fixed.</note>
+<insight>OLS is a special case of MLE under the normality assumption — MLE is the general engine that works for any distribution.</insight>

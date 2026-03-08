@@ -1,0 +1,197 @@
+/* ════════════════════════════════════════════════
+   ANKI CARD CSS  —  Thomas Kiml
+   ════════════════════════════════════════════════
+   QUICK CUSTOMISATION:
+   • Font   → --font-serif / --font-ui
+   • Colors → edit the two :root blocks below
+   ════════════════════════════════════════════════ */
+
+:root {
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-ui:    -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --bg:      #f5f4f1;
+  --surface: #ffffff;
+  --border:  #e0ddd8;
+  --text:    #1a1918;
+  --muted:   #6b6860;
+  --accent:  #b87333;
+
+  --insight-bg:     #fffbea;
+  --insight-border: #e8c84a;
+  --insight-accent: #c49a20;
+
+  --note-bg:     rgba(107,104,96,0.07);
+  --note-border: #c0bdb8;
+  --note-accent: #6b6860;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:      #141412;
+    --surface: #1e1d1b;
+    --border:  #2c2b28;
+    --text:    #e6e4df;
+    --muted:   #888580;
+    --accent:  #c98a4a;
+
+    --insight-bg:     #1f1c0e;
+    --insight-border: #8a7020;
+    --insight-accent: #d4a830;
+
+    --note-bg:     rgba(107,104,96,0.10);
+    --note-border: #3a3936;
+    --note-accent: #888580;
+  }
+}
+
+.nightMode {
+  --bg: #141412; --surface: #1e1d1b; --border: #2c2b28;
+  --text: #e6e4df; --muted: #888580; --accent: #c98a4a;
+  --insight-bg: #1f1c0e; --insight-border: #8a7020; --insight-accent: #d4a830;
+  --note-bg: rgba(107,104,96,0.10); --note-border: #3a3936; --note-accent: #888580;
+}
+
+
+/* ── Base ── */
+.card {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 18px 16px;
+}
+
+/* ── Question ── */
+.question {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 22px;
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* ── Divider ── */
+hr#answer {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 8px 0;
+  opacity: 0.6;
+}
+
+/* ── Category tag ── */
+.category {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* ── Answer / Context blocks ── */
+.ans {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 22px;
+  margin-bottom: 8px;
+  font-size: 17px;
+  line-height: 1.75;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.ans:empty { display: none; }
+.ans:not(:has(*)):not(:has(br)) { display: none; }
+
+/* ── Key Insight callout  →  <insight>…</insight> ── */
+insight {
+  display: block;
+  background: var(--insight-bg);
+  border: 1px solid var(--insight-border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-block: 0.5em;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+insight::before {
+  content: "Key insight: ";
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--insight-accent);
+  display: inline;
+}
+
+/* ── Note callout  →  <note>…</note> ── */
+note {
+  display: block;
+  background: var(--note-bg);
+  border: 1px solid var(--note-border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-block: 0.5em;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+note::before {
+  content: "Note: ";
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--note-accent);
+  display: inline;
+}
+
+/* ── Typography ── */
+b, strong  { font-weight: 600; }
+em, i      { font-style: italic; color: var(--muted); }
+
+span {
+  background: rgba(184, 115, 51, 0.13) !important;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+ul, ol { padding-left: 1.4em; margin: 0.5em 0; }
+li     { margin-bottom: 0.35em; }
+
+code {
+  font-family: "SF Mono", Menlo, monospace;
+  font-size: 0.85em;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1px 5px;
+}
+
+/* ── Images ── */
+.ans img, .question img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 14px auto !important;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+/* ── MathJax spacing fix ── */
+mjx-container[display="true"] {
+  margin: 0.5em 0 !important;
+}
+
+mjx-container {
+  margin: 0 !important;
+}
+
