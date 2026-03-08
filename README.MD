@@ -1,4 +1,4 @@
-# Anki Card Template
+# Anki Template Theme with LLM prompt and custom elements
 
 A minimal, typographically considered Anki card template for graduate-level study. Designed for content-heavy decks in economics, mathematics, and related fields — with full MathJax support, dark mode, and a clean two-tier callout system.
 
@@ -14,7 +14,7 @@ A minimal, typographically considered Anki card template for graduate-level stud
 
 | Light Mode | Dark Mode |
 | :---: | :---: |
-| <img src="./Light.png" width="400"> | <img src="./Dark.png" width="400"> |
+| <img src="./assets//Light.png" width="400"> | <img src="./assets//Dark.png" width="400"> |
 
 ## Installation
 
