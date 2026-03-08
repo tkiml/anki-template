@@ -15,6 +15,8 @@ A minimal, typographically considered Anki card template for graduate-level stud
 ![Screenshot in Light Mode](./Light.png "Anki preset in Light Mode")
 ![Screenshot in Dark Mode](./Dark.png "Anki preset in Dark Mode")
 
+<img src="./Dark.png" width="240">
+
 ## Installation
 
 1. In Anki, open the card type editor: **Tools → Manage Note Types → Cards**
